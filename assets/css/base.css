@@ -1,0 +1,79 @@
+/**
+ * YPServicesERP - Base Styles
+ * Reset y estilos fundamentales
+ * @version 1.0.0
+ */
+
+/* ========================================
+   RESET & BASE
+======================================== */
+*, 
+*::before, 
+*::after { 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-body);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background var(--transition-slow), color var(--transition-slow);
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+/* ========================================
+   APP CONTAINER
+======================================== */
+.app-container { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    } 
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, 
+    *::before, 
+    *::after { 
+        animation-duration: 0.01ms !important; 
+        transition-duration: 0.01ms !important; 
+    }
+}
+
+/* ========================================
+   PRINT
+======================================== */
+@media print {
+    .sidebar, 
+    .sidebar-overlay, 
+    .main-header, 
+    .card-actions, 
+    .table-actions, 
+    .pagination { 
+        display: none !important; 
+    }
+    
+    .main-content { 
+        margin-left: 0 !important; 
+    }
+}

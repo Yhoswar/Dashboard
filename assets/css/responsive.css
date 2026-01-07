@@ -1,0 +1,178 @@
+/**
+ * YPServicesERP - Responsive Styles
+ * Media queries para todos los breakpoints
+ * @version 1.0.0
+ */
+
+/* ========================================
+   XL - 1200px+
+======================================== */
+@media (min-width: 1200px) {
+    .sidebar-toggle-btn {
+        display: flex;
+    }
+}
+
+/* ========================================
+   LG/MD - <1200px (Tablet & Below)
+======================================== */
+@media (max-width: 1199.98px) {
+
+    /* En este rango, el sidebar se oculta y usa el menu hamburguesa */
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content,
+    .main-content.sidebar-collapsed {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar-toggle-btn {
+        display: none;
+    }
+}
+
+/* ========================================
+   SM - <768px (Mobile Landscape)
+======================================== */
+@media (max-width: 767.98px) {
+    .page-content {
+        padding: 1rem;
+    }
+
+    .main-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .page-title {
+        font-size: 1.2rem;
+    }
+
+    .card-header {
+        padding: 0.875rem 1rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .kpi-card {
+        padding: 1rem;
+    }
+
+    .kpi-value {
+        font-size: 1.4rem;
+    }
+
+    .kpi-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .bi-card {
+        padding: 1.25rem;
+    }
+
+    .chart-container {
+        height: 240px;
+    }
+
+    .table-custom thead th,
+    .table-custom tbody td {
+        padding: 0.75rem 0.625rem;
+        font-size: 0.8rem;
+    }
+
+    .action-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .toast-container-custom {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .toast-custom {
+        min-width: auto;
+    }
+}
+
+/* ========================================
+   XS - <576px (Mobile Portrait)
+======================================== */
+@media (max-width: 575.98px) {
+    .page-content {
+        padding: 0.75rem;
+    }
+
+    .breadcrumb-nav {
+        display: none !important;
+    }
+
+    .kpi-value {
+        font-size: 1.25rem;
+    }
+
+    .kpi-label {
+        font-size: 0.7rem;
+    }
+
+    .bi-card {
+        padding: 1rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .bi-title {
+        font-size: 1.05rem;
+    }
+
+    .bi-status-value {
+        font-size: 1.5rem;
+    }
+
+    .content-card {
+        border-radius: var(--radius-lg);
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+
+    .modal-custom .modal-content {
+        border-radius: var(--radius-xl);
+    }
+
+    .modal-custom .modal-header,
+    .modal-custom .modal-body,
+    .modal-custom .modal-footer {
+        padding: 1rem;
+    }
+}
+
+/* ========================================
+   SAFE AREA (Notch Support)
+======================================== */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .sidebar {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .modal-custom .modal-footer {
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    }
+
+    .toast-container-custom {
+        bottom: calc(1rem + env(safe-area-inset-bottom));
+    }
+}

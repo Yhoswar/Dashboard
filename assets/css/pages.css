@@ -1,0 +1,64 @@
+/**
+ * YPServicesERP - Page Specific Styles
+ * Estilos para secciones y páginas específicas
+ * @version 1.0.0
+ */
+
+/* ========================================
+   SETTINGS PAGE
+======================================== */
+.settings-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.settings-nav-item:hover { 
+    background: var(--bg-card-hover); 
+}
+
+.settings-nav-item.active { 
+    background: rgba(99, 102, 241, 0.1); 
+    color: var(--primary); 
+}
+
+.setting-item { 
+    padding: 1.125rem 0; 
+    border-bottom: 1px solid var(--border-color); 
+}
+
+.setting-item:last-child { 
+    border-bottom: none; 
+}
+
+.form-switch-custom .form-check-input {
+    width: 44px;
+    height: 24px;
+    cursor: pointer;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+}
+
+.form-switch-custom .form-check-input:checked { 
+    background-color: var(--primary); 
+    border-color: var(--primary); 
+}
+
+.form-switch-custom .form-check-input:focus { 
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); 
+}
+
+.settings-panel { 
+    display: none; 
+}
+
+.settings-panel.active { 
+    display: block; 
+}
