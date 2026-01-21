@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -7,22 +8,24 @@
     <meta name="description" content="YPServicesERP - Sistema de gestión empresarial">
     <meta name="author" content="YP Services">
     <title>Dashboard - YPServicesERP</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-    
+
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- YPServicesERP Styles -->
     <link href="assets/css/main.css" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <div class="app-container">
         <!-- Sidebar Overlay -->
         <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -32,7 +35,7 @@
             <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Colapsar menú">
                 <i class="bi bi-chevron-left"></i>
             </button>
-            
+
             <div class="sidebar-header">
                 <a href="index.html" class="sidebar-logo">
                     <div class="logo-icon">YP</div>
@@ -184,34 +187,29 @@
                 <div class="bi-card mb-4">
                     <div class="row align-items-center">
                         <div class="col-lg-8 mb-3 mb-lg-0">
-                            <div class="bi-title">Business Intelligence</div>
-                            <div class="bi-subtitle mb-3">Control táctico de tu liquidez para 2026</div>
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="bi-metric">
-                                        <span class="bi-metric-label">Ganancia Real (Neto)</span>
-                                        <span class="bi-metric-value">$18,450</span>
-                                    </div>
+                            <div class="bi-title"><i class="bi bi-lightbulb me-2"></i>Business Intelligence</div>
+                            <div class="bi-subtitle mb-3">Control financiero en tiempo real - Enero 2026</div>
+                            <div class="d-flex flex-wrap gap-4 align-items-center">
+                                <div class="bi-metric-inline">
+                                    <span class="bi-mini-badge success"><i class="bi bi-wallet2"></i> GANANCIA
+                                        NETA</span>
+                                    <span class="bi-metric-value">$18,450</span>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="bi-metric">
-                                        <span class="bi-metric-label">Gastos Generales</span>
-                                        <span class="bi-metric-value">$4,200</span>
-                                    </div>
+                                <div class="bi-metric-inline">
+                                    <span class="bi-mini-badge danger"><i class="bi bi-cash-stack"></i> GASTOS</span>
+                                    <span class="bi-metric-value">$4,200</span>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="bi-metric">
-                                        <span class="bi-metric-label">Costos de Ejecución</span>
-                                        <span class="bi-metric-value">$1,850</span>
-                                    </div>
+                                <div class="bi-metric-inline">
+                                    <span class="bi-mini-badge warning"><i class="bi bi-tools"></i> COSTOS</span>
+                                    <span class="bi-metric-value">$1,850</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="bi-status">
-                                <div class="bi-status-label">Estado Salud</div>
+                                <div class="bi-status-label">Margen Operativo</div>
                                 <div class="bi-status-value">78%</div>
-                                <div class="bi-status-text">Margen Operativo</div>
+                                <div class="bi-status-text">Meta: 70%</div>
                                 <div class="bi-status-badge">RENTABLE</div>
                             </div>
                         </div>
@@ -224,7 +222,10 @@
                         <div class="content-card h-100">
                             <div class="card-header">
                                 <h5 class="card-title"><i class="bi bi-bar-chart-fill"></i> Ingresos por Proyecto</h5>
-                                <select class="filter-select"><option>Este Mes</option><option>Este Año</option></select>
+                                <select class="filter-select">
+                                    <option>Este Mes</option>
+                                    <option>Este Año</option>
+                                </select>
                             </div>
                             <div class="card-body">
                                 <div class="chart-container"><canvas id="revenueChart"></canvas></div>
@@ -263,7 +264,9 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
-                                            <div class="table-avatar" style="background: rgba(16,185,129,0.1); color: var(--success);"><i class="bi bi-check-lg"></i></div>
+                                            <div class="table-avatar"
+                                                style="background: rgba(16,185,129,0.1); color: var(--success);"><i
+                                                    class="bi bi-check-lg"></i></div>
                                             <span>Proyecto completado</span>
                                         </div>
                                     </td>
@@ -274,7 +277,9 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
-                                            <div class="table-avatar" style="background: rgba(99,102,241,0.1); color: var(--primary);"><i class="bi bi-person-plus"></i></div>
+                                            <div class="table-avatar"
+                                                style="background: rgba(99,102,241,0.1); color: var(--primary);"><i
+                                                    class="bi bi-person-plus"></i></div>
                                             <span>Nuevo cliente registrado</span>
                                         </div>
                                     </td>
@@ -285,7 +290,9 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
-                                            <div class="table-avatar" style="background: rgba(245,158,11,0.1); color: var(--warning);"><i class="bi bi-receipt"></i></div>
+                                            <div class="table-avatar"
+                                                style="background: rgba(245,158,11,0.1); color: var(--warning);"><i
+                                                    class="bi bi-receipt"></i></div>
                                             <span>Factura generada</span>
                                         </div>
                                     </td>
@@ -307,7 +314,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
     <!-- YPServicesERP Scripts -->
     <script src="assets/js/sidebar.js"></script>
     <script src="assets/js/theme.js"></script>
@@ -315,4 +322,5 @@
     <script src="assets/js/charts.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
