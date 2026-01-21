@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="description" content="YPServicesERP - Movimientos Financieros">
+    <meta name="author" content="YP Services">
+    <title>Movimientos - YPServicesERP</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- YPServicesERP Styles -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Colapsar menú">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <div class="logo-icon">YP</div>
+                    <div class="logo-text">YPServices<span>ERP</span></div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Menú Principal</div>
+                    <a href="index.html" class="nav-item" data-title="Dashboard">
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="clients.html" class="nav-item" data-title="Clientes">
+                        <i class="bi bi-people-fill"></i>
+                        <span>Clientes</span>
+                        <span class="badge">12</span>
+                    </a>
+                    <a href="projects.html" class="nav-item" data-title="Proyectos">
+                        <i class="bi bi-kanban-fill"></i>
+                        <span>Proyectos</span>
+                    </a>
+                    <a href="tasks.html" class="nav-item" data-title="Tareas">
+                        <i class="bi bi-check2-square"></i>
+                        <span>Tareas</span>
+                        <span class="badge bg-warning">5</span>
+                    </a>
+                    <a href="invoices.html" class="nav-item" data-title="Facturación">
+                        <i class="bi bi-receipt"></i>
+                        <span>Facturación</span>
+                    </a>
+                    <a href="employees.html" class="nav-item" data-title="Empleados">
+                        <i class="bi bi-person-badge-fill"></i>
+                        <span>Empleados</span>
+                    </a>
+                    <a href="movements.html" class="nav-item active" data-title="Movimientos">
+                        <i class="bi bi-cash-stack"></i>
+                        <span>Movimientos</span>
+                    </a>
+                    <a href="reports.html" class="nav-item" data-title="Reportes">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <span>Reportes</span>
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Sistema</div>
+                    <a href="settings.html" class="nav-item" data-title="Configuración">
+                        <i class="bi bi-gear-fill"></i>
+                        <span>Configuración</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">AD</div>
+                    <div class="user-info">
+                        <div class="user-name">Admin User</div>
+                        <div class="user-role">Administrador</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></button>
+                        <div>
+                            <h1 class="page-title">Movimientos</h1>
+                            <nav class="breadcrumb-nav d-none d-sm-flex align-items-center gap-2">
+                                <a href="index.html">Dashboard</a>
+                                <i class="bi bi-chevron-right small"></i>
+                                <span>Movimientos</span>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="header-btn" id="themeToggle" title="Cambiar tema">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                        <button class="header-btn d-none d-sm-flex" id="notificationBtn" title="Notificaciones">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- KPIs -->
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <div class="kpi-icon danger"><i class="bi bi-arrow-up-circle-fill"></i></div>
+                                <span class="kpi-trend trend-up"><i class="bi bi-arrow-up"></i> 12%</span>
+                            </div>
+                            <div class="kpi-label">Egresos del Mes</div>
+                            <div class="kpi-value">$18,500</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <div class="kpi-icon primary"><i class="bi bi-people-fill"></i></div>
+                            </div>
+                            <div class="kpi-label">Pagos a Equipo</div>
+                            <div class="kpi-value">$12,400</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <div class="kpi-icon warning"><i class="bi bi-tools"></i></div>
+                            </div>
+                            <div class="kpi-label">Servicios/Tools</div>
+                            <div class="kpi-value">$3,200</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="kpi-card">
+                            <div class="kpi-header">
+                                <div class="kpi-icon info"><i class="bi bi-receipt"></i></div>
+                            </div>
+                            <div class="kpi-label">Otros Gastos</div>
+                            <div class="kpi-value">$2,900</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters & Actions -->
+                <div class="content-card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title"><i class="bi bi-funnel"></i> Filtros</h5>
+                        <button class="btn btn-custom-primary" data-bs-toggle="modal" data-bs-target="#newMovementModal">
+                            <i class="bi bi-plus-lg me-1"></i>
+                            <span class="d-none d-sm-inline">Nuevo Movimiento</span>
+                            <span class="d-sm-none">Nuevo</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-3">
+                                <label class="filter-label">Tipo</label>
+                                <select class="filter-select" id="filterType">
+                                    <option value="">Todos los tipos</option>
+                                    <option value="pago_equipo">Pago a Equipo</option>
+                                    <option value="servicio">Servicio/Herramienta</option>
+                                    <option value="proyecto">Gasto de Proyecto</option>
+                                    <option value="otro">Otros</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <label class="filter-label">Empleado</label>
+                                <select class="filter-select" id="filterEmployee">
+                                    <option value="">Todos los empleados</option>
+                                    <option value="1">María García</option>
+                                    <option value="2">Carlos López</option>
+                                    <option value="3">Ana Martínez</option>
+                                    <option value="4">José Ramírez</option>
+                                    <option value="5">Laura Sánchez</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <label class="filter-label">Proyecto</label>
+                                <select class="filter-select" id="filterProject">
+                                    <option value="">Todos los proyectos</option>
+                                    <option value="1">E-commerce TechStore</option>
+                                    <option value="2">App Gestión Inventario</option>
+                                    <option value="3">Landing Page Promo</option>
+                                    <option value="4">Sistema CRM</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <label class="filter-label">Período</label>
+                                <select class="filter-select" id="filterPeriod">
+                                    <option value="this_month">Este mes</option>
+                                    <option value="last_month">Mes anterior</option>
+                                    <option value="last_3_months">Últimos 3 meses</option>
+                                    <option value="this_year">Este año</option>
+                                    <option value="all">Todo el historial</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Movements Table -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h5 class="card-title"><i class="bi bi-cash-stack"></i> Listado de Movimientos</h5>
+                        <span class="text-muted small">24 movimientos encontrados</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table-custom" id="movementsTable">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Descripción</th>
+                                    <th class="d-none d-md-table-cell">Tipo</th>
+                                    <th class="d-none d-lg-table-cell">Relacionado</th>
+                                    <th>Monto</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="fw-medium">11 Ene 2026</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="movement-icon payment">
+                                                <i class="bi bi-person-fill"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold d-block">Pago quincenal - María García</span>
+                                                <span class="text-muted small d-md-none">Pago a Equipo</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="type-badge payment">Pago a Equipo</span>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell">
+                                        <span class="text-muted">—</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount-expense">-$1,800</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="action-btn" title="Ver detalle" onclick="Movements.openDetail(1)">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <button class="action-btn d-none d-sm-inline-flex" title="Editar" onclick="Movements.openEdit(1)">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="action-btn" title="Eliminar" onclick="Movements.openDelete(1)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="fw-medium">10 Ene 2026</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="movement-icon payment">
+                                                <i class="bi bi-person-fill"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold d-block">Pago quincenal - Carlos López</span>
+                                                <span class="text-muted small d-md-none">Pago a Equipo</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="type-badge payment">Pago a Equipo</span>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell">
+                                        <span class="text-muted">—</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount-expense">-$2,200</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="action-btn" title="Ver detalle" onclick="Movements.openDetail(2)">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <button class="action-btn d-none d-sm-inline-flex" title="Editar" onclick="Movements.openEdit(2)">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="action-btn" title="Eliminar" onclick="Movements.openDelete(2)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="fw-medium">08 Ene 2026</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="movement-icon service">
+                                                <i class="bi bi-cloud-fill"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold d-block">Suscripción AWS - Enero</span>
+                                                <span class="text-muted small d-md-none">Servicio</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="type-badge service">Servicio</span>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell">
+                                        <a href="projects.html?id=1" class="text-primary">E-commerce TechStore</a>
+                                    </td>
+                                    <td>
+                                        <span class="amount-expense">-$450</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="action-btn" title="Ver detalle" onclick="Movements.openDetail(3)">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <button class="action-btn d-none d-sm-inline-flex" title="Editar" onclick="Movements.openEdit(3)">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="action-btn" title="Eliminar" onclick="Movements.openDelete(3)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="fw-medium">05 Ene 2026</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="movement-icon project">
+                                                <i class="bi bi-kanban-fill"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold d-block">Licencia plugin premium</span>
+                                                <span class="text-muted small d-md-none">Gasto Proyecto</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="type-badge project">Gasto Proyecto</span>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell">
+                                        <a href="projects.html?id=2" class="text-primary">App Gestión Inventario</a>
+                                    </td>
+                                    <td>
+                                        <span class="amount-expense">-$79</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="action-btn" title="Ver detalle" onclick="Movements.openDetail(4)">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <button class="action-btn d-none d-sm-inline-flex" title="Editar" onclick="Movements.openEdit(4)">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="action-btn" title="Eliminar" onclick="Movements.openDelete(4)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="fw-medium">03 Ene 2026</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="movement-icon service">
+                                                <i class="bi bi-palette-fill"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold d-block">Suscripción Figma Team</span>
+                                                <span class="text-muted small d-md-none">Servicio</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="type-badge service">Servicio</span>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell">
+                                        <span class="text-muted">General</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount-expense">-$75</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="action-btn" title="Ver detalle" onclick="Movements.openDetail(5)">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <button class="action-btn d-none d-sm-inline-flex" title="Editar" onclick="Movements.openEdit(5)">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="action-btn" title="Eliminar" onclick="Movements.openDelete(5)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="fw-medium">01 Ene 2026</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="movement-icon other">
+                                                <i class="bi bi-three-dots"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold d-block">Dominio anual ypservices.com</span>
+                                                <span class="text-muted small d-md-none">Otro</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="type-badge other">Otro</span>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell">
+                                        <span class="text-muted">General</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount-expense">-$15</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="action-btn" title="Ver detalle" onclick="Movements.openDetail(6)">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <button class="action-btn d-none d-sm-inline-flex" title="Editar" onclick="Movements.openEdit(6)">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="action-btn" title="Eliminar" onclick="Movements.openDelete(6)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="fw-medium">28 Dic 2025</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="movement-icon payment">
+                                                <i class="bi bi-person-fill"></i>
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold d-block">Bono fin de año - Ana Martínez</span>
+                                                <span class="text-muted small d-md-none">Pago a Equipo</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="type-badge payment">Pago a Equipo</span>
+                                    </td>
+                                    <td class="d-none d-lg-table-cell">
+                                        <span class="text-muted">—</span>
+                                    </td>
+                                    <td>
+                                        <span class="amount-expense">-$500</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="action-btn" title="Ver detalle" onclick="Movements.openDetail(7)">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                            <button class="action-btn d-none d-sm-inline-flex" title="Editar" onclick="Movements.openEdit(7)">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="action-btn" title="Eliminar" onclick="Movements.openDelete(7)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="card-footer d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <span class="text-muted small">Mostrando 1-7 de 24 movimientos</span>
+                        <nav>
+                            <ul class="pagination pagination-sm mb-0">
+                                <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal: Nuevo Movimiento -->
+    <div class="modal fade modal-custom" id="newMovementModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-plus-circle text-primary me-2"></i>Nuevo Movimiento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newMovementForm">
+                        <div class="mb-3">
+                            <label class="form-label-custom">Tipo de Movimiento <span class="text-danger">*</span></label>
+                            <select class="form-select-custom" id="movementType" required>
+                                <option value="">Seleccionar tipo</option>
+                                <option value="pago_equipo">Pago a Equipo</option>
+                                <option value="servicio">Servicio/Herramienta</option>
+                                <option value="proyecto">Gasto de Proyecto</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3" id="employeeField" style="display: none;">
+                            <label class="form-label-custom">Empleado <span class="text-danger">*</span></label>
+                            <select class="form-select-custom" id="movementEmployee">
+                                <option value="">Seleccionar empleado</option>
+                                <option value="1">María García</option>
+                                <option value="2">Carlos López</option>
+                                <option value="3">Ana Martínez</option>
+                                <option value="4">José Ramírez</option>
+                                <option value="5">Laura Sánchez</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label-custom">Descripción <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control-custom" id="movementDescription" placeholder="Ej: Pago quincenal, Suscripción AWS..." required>
+                        </div>
+                        
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <label class="form-label-custom">Monto <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control-custom" id="movementAmount" placeholder="0.00" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label-custom">Fecha <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control-custom" id="movementDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label-custom">Proyecto Relacionado</label>
+                            <select class="form-select-custom" id="movementProject">
+                                <option value="">Ninguno (Gasto general)</option>
+                                <option value="1">E-commerce TechStore</option>
+                                <option value="2">App Gestión Inventario</option>
+                                <option value="3">Landing Page Promo</option>
+                                <option value="4">Sistema CRM</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label-custom">Notas</label>
+                            <textarea class="form-control-custom" id="movementNotes" rows="2" placeholder="Notas adicionales (opcional)"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-custom-primary" onclick="Movements.save()">
+                        <i class="bi bi-check-lg me-1"></i> Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Ver Detalle -->
+    <div class="modal fade modal-custom" id="detailMovementModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-receipt text-primary me-2"></i>Detalle del Movimiento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="view-header">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="movement-icon-lg payment">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1" id="detailDescription">Pago quincenal - María García</h5>
+                                <span class="type-badge payment" id="detailType">Pago a Equipo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-detail">
+                        <div class="row">
+                            <div class="col-5 view-label">Monto</div>
+                            <div class="col-7 fw-bold text-danger" id="detailAmount">-$1,800.00</div>
+                        </div>
+                    </div>
+                    <div class="view-detail">
+                        <div class="row">
+                            <div class="col-5 view-label">Fecha</div>
+                            <div class="col-7" id="detailDate">11 de Enero, 2026</div>
+                        </div>
+                    </div>
+                    <div class="view-detail">
+                        <div class="row">
+                            <div class="col-5 view-label">Empleado</div>
+                            <div class="col-7" id="detailEmployee">María García</div>
+                        </div>
+                    </div>
+                    <div class="view-detail">
+                        <div class="row">
+                            <div class="col-5 view-label">Proyecto</div>
+                            <div class="col-7" id="detailProject">—</div>
+                        </div>
+                    </div>
+                    <div class="view-detail">
+                        <div class="row">
+                            <div class="col-5 view-label">Notas</div>
+                            <div class="col-7 text-muted" id="detailNotes">Pago correspondiente a primera quincena de enero 2026</div>
+                        </div>
+                    </div>
+                    <div class="view-detail">
+                        <div class="row">
+                            <div class="col-5 view-label">Registrado por</div>
+                            <div class="col-7" id="detailCreatedBy">Admin User</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-custom-primary" onclick="Movements.openEdit(1)">
+                        <i class="bi bi-pencil me-1"></i> Editar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Eliminar -->
+    <div class="modal fade modal-custom" id="deleteMovementModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-body text-center py-4">
+                    <div class="delete-warning-icon mx-auto mb-3">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+                    <h5 class="mb-2">¿Eliminar movimiento?</h5>
+                    <p class="text-muted mb-0">Esta acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-custom-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="Movements.confirmDelete()">
+                        <i class="bi bi-trash me-1"></i> Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container-custom" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/movements.js"></script>
+</body>
+</html>
