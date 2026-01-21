@@ -140,59 +140,6 @@
 }
 
 /* ========================================
-   CARD FOOTER
-======================================== */
-.card-footer {
-    padding: 1rem 1.25rem;
-    background: var(--bg-input);
-    border-top: 1px solid var(--border-color);
-}
-
-/* ========================================
-   PAGINATION CUSTOM
-======================================== */
-.pagination .page-link {
-    background: var(--bg-card);
-    border-color: var(--border-color);
-    color: var(--text-primary);
-    font-size: 0.85rem;
-    padding: 0.4rem 0.75rem;
-}
-
-.pagination .page-link:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-color);
-    color: var(--primary);
-}
-
-.pagination .page-item.active .page-link {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-}
-
-.pagination .page-item.disabled .page-link {
-    background: var(--bg-input);
-    border-color: var(--border-color);
-    color: var(--text-muted);
-}
-
-[data-theme="dark"] .pagination .page-link {
-    background: var(--bg-card);
-    border-color: var(--border-color);
-    color: var(--text-primary);
-}
-
-[data-theme="dark"] .pagination .page-link:hover {
-    background: var(--bg-card-hover);
-}
-
-[data-theme="dark"] .pagination .page-item.disabled .page-link {
-    background: var(--bg-input);
-    color: var(--text-muted);
-}
-
-/* ========================================
    RESPONSIVE
 ======================================== */
 @media (max-width: 767.98px) {
@@ -206,15 +153,5 @@
     .type-badge {
         font-size: 0.65rem;
         padding: 0.25rem 0.5rem;
-    }
-    
-    .card-footer {
-        flex-direction: column;
-        gap: 0.75rem;
-        text-align: center;
-    }
-    
-    .pagination {
-        justify-content: center;
     }
 }
