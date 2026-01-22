@@ -13,44 +13,44 @@
     --primary-light: #818cf8;
     --primary-dark: #4f46e5;
     --secondary: #8b5cf6;
-    
+
     /* Colores de estado */
     --success: #10b981;
     --warning: #f59e0b;
     --danger: #ef4444;
     --info: #3b82f6;
-    
+
     /* Fondos */
     --bg-body: #f8fafc;
     --bg-sidebar: #0f172a;
     --bg-card: #ffffff;
     --bg-card-hover: #f1f5f9;
     --bg-input: #f1f5f9;
-    
+
     /* Textos */
     --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --text-muted: #94a3b8;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
     --text-sidebar: #e2e8f0;
     --text-sidebar-muted: #94a3b8;
-    
+
     /* Bordes */
     --border-color: #e2e8f0;
-    
+
     /* Sombras */
     --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-    
+
     /* Layout */
     --sidebar-width: 260px;
     --sidebar-collapsed: 80px;
-    
+
     /* Transiciones */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.2s ease;
     --transition-slow: 0.3s ease;
-    
+
     /* Border radius */
     --radius-sm: 6px;
     --radius-md: 10px;
